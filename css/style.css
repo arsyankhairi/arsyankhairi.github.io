@@ -50,6 +50,46 @@ html {
   overflow: hidden;
 }
 
+.tech-logo-marquee {
+  overflow: hidden;
+  position: relative;
+  height: 80px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll 30s linear infinite;
+  align-items: center;
+}
+
+.logo-track img {
+  width: 60px;           /* Fixed width for all logos */
+  height: 60px;          /* Fixed height for all logos */
+  object-fit: contain;   /* Maintain aspect ratio inside box */
+  margin: 0 25px;
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+
+.logo-track img:hover {
+  filter: grayscale(0%);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 *,
 *:after,
 *:before {
@@ -1045,9 +1085,12 @@ keyframes
 main#main {
   position: absolute;
   width: 100%;
-  overflow: hidden;
   height: 100%;
+  overflow-y: auto; /* enables vertical scrolling */
+  overflow-x: hidden; /* optional: hides horizontal scroll */
 }
+
+
 
 #main>section {
   position: absolute;
