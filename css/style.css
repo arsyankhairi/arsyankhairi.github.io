@@ -51,28 +51,26 @@ html {
 }
 
 .tech-logo-marquee {
-  overflow: hidden;
-  position: relative;
-  height: 80px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  margin-top: 10px;
+  width: 100%;
+  border-radius: 12px;
+  padding: 20px 30px;
   display: flex;
+  justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .logo-track {
   display: flex;
-  width: fit-content;
-  animation: scroll 30s linear infinite;
+  gap: 40px; /* equal spacing between logos */
   align-items: center;
+  flex-wrap: nowrap;
 }
 
 .logo-track img {
-  width: 60px;           /* Fixed width for all logos */
-  height: 60px;          /* Fixed height for all logos */
-  object-fit: contain;   /* Maintain aspect ratio inside box */
-  margin: 0 25px;
+  height: 60px;
+  width: 60px;
+  object-fit: contain;
   filter: grayscale(100%);
   transition: filter 0.3s;
 }
@@ -81,12 +79,19 @@ html {
   filter: grayscale(0%);
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
+/* Mobile adjustment if needed */
+@media (max-width: 768px) {
+  .tech-logo-marquee {
+    padding: 15px 20px;
   }
-  100% {
-    transform: translateX(-50%);
+
+  .logo-track {
+    gap: 30px;
+  }
+
+  .logo-track img {
+    height: 50px;
+    width: 50px;
   }
 }
 
@@ -3069,5 +3074,22 @@ ul.social-intro li a:hover i {
 
   .page-title .title-head-subtitle {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-text {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .main-text h1,
+  .main-text h3 {
+    text-align: center;
+  }
+
+  .ah-words-wrapper {
+    display: inline-block;
   }
 }
